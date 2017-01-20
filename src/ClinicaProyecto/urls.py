@@ -18,10 +18,15 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
 from pacientes import views
+from pacientes.views import inicio
+from Doctores import views
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.inicio, name='inicio'),
+    url(r'^inicio/$', inicio, name='inicio'),
+    url(r'^paginadoctor/$', views.paginadoctor, name='doctores'),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
