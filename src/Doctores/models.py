@@ -16,10 +16,11 @@ class RegistroDoctor(models.Model):
 
 class Itinerario(models.Model):
     citas = models.CharField(max_length = 50, blank = False)
-    paciente = models.CharField(max_length = 50, blank = False)
+    paciente_itinerario = models.CharField(max_length = 50, blank = False)
     doctor = models.CharField(max_length = 50, blank = False)
     medicina = models.CharField(max_length = 50, blank = False)
     cantidad_medicina = models.CharField(max_length = 50, blank = False)
+    observacion = models.CharField(max_length = 200, blank = True)
 
     def __str__(self):
         return self.citas

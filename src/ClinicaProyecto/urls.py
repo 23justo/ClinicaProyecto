@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^inicio/$', inicio, name='inicio'),
     url(r'^paginadoctor/$', views.paginadoctor, name='doctores'),
+    url(r'^itinerario/$', views.paginaitinerario, name='itinerario'),
 
 ]
 if settings.DEBUG:

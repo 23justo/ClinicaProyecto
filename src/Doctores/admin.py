@@ -11,7 +11,7 @@ class AdminRegistrado(admin.ModelAdmin):
 
 class ItinerarioAdmin(admin.ModelAdmin):
     list_display = ['citas',
-    'paciente',
+    'paciente_itinerario',
     'doctor',
     'medicina',
     'cantidad_medicina']
