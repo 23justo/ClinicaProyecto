@@ -6,13 +6,15 @@ def inicio(request):
     return render(request,"index1.html",{})
 
 def paciente(request):
+    # if request.method == "POST":
+    #     print (request.POST)
     form = pacienteModelsForms(request.POST or None)
     if form.is_valid():
         instance = form.save(commit=False)
-        print("hola")
-        print(instance)
-        print(instance.timestamp)
         instance.save()
+        # print(instance)
+        # print(instance.timestamp)
+
 
     context = {
     "form":form,
