@@ -1,10 +1,14 @@
 <h1>Creacion de pacientes</h1>
+
+<form method='POST' action=''>{% csrf_token %}
+
 <p><h4>Nombre</h4>{{ form.nombre }}</p>
 <p><h4>Fecha Nacimiento</h4>{{form.fechaNacimiento}}</p>
 <p><h4>Telefono</h4>{{form.telefono}}</p>
 <p><h4>Genero</h4>{{form.genero}}</p>
-<p><h4>Edad</h4>{{form.edad}}</p>
 <p><h4>Tipo de Sangre</h4>{{form.tipoSangre}}</p>
 <p><h4>DPI</h4>{{form.dpi}}</p>
 <p><h4>CUI</h4>{{form.cui}}</p>
+<input type = "submit" />
+</form>
 <p></p>

@@ -6,7 +6,6 @@ class paciente(models.Model):
     fechaNacimiento = models.DateField()
     telefono = models.CharField(max_length = 8 , blank = True)
     genero = models.CharField(max_length = 9 ,blank = False)
-    edad = models.IntegerField()
     tipoSangre = models.CharField(max_length = 3)
     dpi = models.CharField(max_length = 30 , blank = False)
     cui = models.CharField(max_length = 30 , blank = False)

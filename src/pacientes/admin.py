@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from .models import paciente,familia
+from .forms import pacienteModelsForms
 # Register your models here.
 class pacienteAdmin(admin.ModelAdmin):
     list_display = [
@@ -8,12 +9,12 @@ class pacienteAdmin(admin.ModelAdmin):
     'fechaNacimiento',
     'telefono',
     'genero',
-    'edad',
     'tipoSangre',
     'dpi',
     'cui',
     'idFamilia',
     ]
+    form = pacienteModelsForms
 
 class familiaAdmin(admin.ModelAdmin):
     list_display = [
