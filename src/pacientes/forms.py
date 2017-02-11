@@ -1,5 +1,5 @@
 from django import forms
-from .models import paciente
+from .models import paciente,familia
 
 
 class pacienteModelsForms(forms.ModelForm):
@@ -14,4 +14,12 @@ class pacienteModelsForms(forms.ModelForm):
         "dpi",
         "cui",
         "idFamilia",
+            ]
+
+class familiaModelsForms(forms.ModelForm):
+    class Meta:
+        model = familia
+        fields = [
+        "primerApellido",
+        "segundoApellido",
             ]

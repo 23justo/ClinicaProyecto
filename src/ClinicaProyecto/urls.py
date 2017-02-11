@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from pacientes import views
 from pacientes.views import inicio
-from pacientes.views import paciente
+from pacientes.views import paciente,familia
 from Doctores import views
 
 
@@ -28,6 +28,7 @@ urlpatterns = [
     # views de app pacientes
     url(r'^inicio/$', inicio, name='inicio'),
     url(r'^paciente/$', paciente, name='pacientes'),
+    url(r'^familia/$', familia, name='familias'),
     #views de app docotres
     url(r'^paginadoctor/$', views.paginadoctor, name='doctores'),
     url(r'^itinerario/$', views.paginaitinerario, name='itinerario'),

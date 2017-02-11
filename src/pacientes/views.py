@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import pacienteModelsForms
+from .forms import pacienteModelsForms,familiaModelsForms
 
 # Create your views here.
 def inicio(request):
@@ -20,3 +20,15 @@ def paciente(request):
     "form":form,
     }
     return render(request,"pacientes/creacionPaciente.html",context)
+
+
+def familia(request):
+    form = familiaModelsForms(request.POST or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+
+    context = {
+    "form":form
+    }
+    return render(request,"pacientes/creacionFamilias.html",context)
