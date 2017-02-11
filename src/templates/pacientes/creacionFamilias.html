@@ -1,0 +1,8 @@
+<h1>Creacion de familias</h1>
+
+<form method='POST' action=''>{% csrf_token %}
+
+<p><h4>Primer Apellido</h4>{{ form.primerApellido }}</p>
+<p><h4>Segundo Apellido</h4>{{form.segundoApellido}}</p>
+<input type = "submit" />
+</form>
