@@ -21,10 +21,13 @@ from pacientes import views
 from pacientes.views import inicio
 from pacientes.views import paciente,familia
 from Doctores import views
+from django.contrib.auth.views import login
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #url de login
+    url(r'^$',login,{'template_name':'Usuario/login.html'},name='login'),
     # views de app pacientes
     url(r'^inicio/$', inicio, name='inicio'),
     url(r'^paciente/$', paciente, name='pacientes'),

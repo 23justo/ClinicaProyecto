@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+
+
+
+      <link rel="stylesheet" href='{% static "login/css/style.css" %}'>
+
+
+</head>
+
+<body>
+  <html lang="en-US">
+<head>
+  <meta charset="utf-8">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+
+</head>
+    <div id="login">
+      <form name='form-login'  method="POST">
+          {% csrf_token %}
+        <span class="fontawesome-user"></span>
+          <input  id="user" placeholder="Username"  class="form-control" type="text" name="username">
+
+        <span class="fontawesome-lock"></span>
+          <input type="password" id"pass" placeholder="Password"  class="form-control" type="password" name="password">
+
+        <input type="submit" value="Login">
+
+</form>
+
+
+</body>
+</html>
