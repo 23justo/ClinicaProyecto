@@ -3,7 +3,7 @@ from .forms import pacienteModelsForms,familiaModelsForms
 
 # Create your views here.
 def inicio(request):
-    return render(request,"index1.html",{})
+    return render(request,"baseTemplate/base.html",{})
 
 def paciente(request):
     # if request.method == "POST":
