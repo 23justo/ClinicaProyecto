@@ -17,9 +17,9 @@ from django.conf import settings
 from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
-from pacientes import views
-from pacientes.views import inicio
-from pacientes.views import paciente,familia
+from django.contrib.auth.decorators import login_required
+
+from pacientes.views import inicio,paciente,familia
 from Doctores import views
 from django.contrib.auth.views import login
 
@@ -29,7 +29,7 @@ urlpatterns = [
     #url de login
     url(r'^$',login,{'template_name':'Usuario/login.html'},name='login'),
     # views de app pacientes
-    url(r'^inicio/$', inicio, name='inicio'),
+    url(r'^inicio/$', login_required(inicio), name='inicio'),
     url(r'^paciente/$', paciente, name='pacientes'),
     url(r'^familia/$', familia, name='familias'),
     #views de app docotres
