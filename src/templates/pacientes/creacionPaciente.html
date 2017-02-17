@@ -1,15 +1,93 @@
+{% extends  'baseTemplate/base.html'%}
 <h1>Creacion de pacientes</h1>
 
 <form method='POST' action=''>{% csrf_token %}
+{% block navBar %}
+<li><a href="#intro">Pacientes</a></li>
+<li><a href="#one">Ingresar Paciente</a></li>
+<li><a href="#two">Editar Paciente</a></li>
+<li><a href="#three">Incio</a></li>
+{% endblock %}
 
-<p><h4>Nombre</h4>{{ form.nombre }}</p>
-<p><h4>Fecha Nacimiento</h4>{{form.fechaNacimiento}}</p>
-<p><h4>Telefono</h4>{{form.telefono}}</p>
-<p><h4>Genero</h4>{{form.genero}}</p>
-<p><h4>Tipo de Sangre</h4>{{form.tipoSangre}}</p>
-<p><h4>DPI</h4>{{form.dpi}}</p>
-<p><h4>CUI</h4>{{form.cui}}</p>
-<p><h4>Familia</h4>{{form.idFamilia}}</p>
-<input type = "submit" />
+{% block apartados %}
+<!-- Intro -->
+  <section id="intro" class="wrapper style1 fullscreen fade-up">
+    <div class="inner">
+      <h1>Pacientes</h1>
+
+      <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Telefono</th>
+            <th>Genero</th>
+            <th>Tipo De Sangre</th>
+            <th>DPI</th>
+            <th>CUI</th>
+            <th>Familia</th>
+          </tr>
+
+          <tr>
+            {% for dato in queryset %}
+            {{ dato.nombre }}
+            {{dato.fechaNacimiento}}
+            {{dato.telefono}}
+            {{dato.genero}}
+            {{dato.tipoSangre}}
+            {{dato.dpi}}
+            {{dato.cui}}
+            {{dato.idFamilia}}
+            {% endfor %}
+          </tr>
+
+      </table>
+
+
+      <ul class="actions">
+        <li><a href="#one" class="button scrolly">Learn more</a></li>
+      </ul>
+    </div>
+  </section>
+
+<!-- primer -->
+<section id="one" class="wrapper style2 spotlights">
+  <section>
+
+    <div class="content">
+      <div class="inner">
+        <h2>Ingresa Un Paciente</h2>
+        <form method='POST' action=''>{% csrf_token %}
+          <table>
+            <td>
+              <p><h6>Nombre</h6>{{ form.nombre }}</p>
+              <p><h6>Fecha Nacimiento</h6>{{form.fechaNacimiento}}</p>
+              <p><h6>Telefono</h6>{{form.telefono}}</p>
+              <p><h6>Genero</h6>{{form.genero}}</p>
+
+            </td>
+            <td>
+              <p><h6>Tipo de Sangre</h6>{{form.tipoSangre}}</p>
+              <p><h6>DPI</h6>{{form.dpi}}</p>
+              <p><h6>CUI</h6>{{form.cui}}</p>
+              <p><h6>Familia</h6>{{form.idFamilia}}</p>
+
+            </td>
+
+          </table>
+          <input type = "submit" value = "Ingresar" />
+
+        </form>
+
+        <ul class="actions">
+
+        </ul>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+{% endblock %}
+
 </form>
 <p></p>

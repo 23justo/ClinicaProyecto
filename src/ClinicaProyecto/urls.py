@@ -21,17 +21,18 @@ from django.contrib.auth.decorators import login_required
 
 from pacientes.views import inicio,paciente,familia
 from Doctores import views
-from django.contrib.auth.views import login
+from django.contrib.auth.views import login,logout_then_login
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #url de login
     url(r'^$',login,{'template_name':'Usuario/login.html'},name='login'),
+    url(r'^logout',logout_then_login,name='logout'),
     # views de app pacientes
     url(r'^inicio/$', login_required(inicio), name='inicio'),
-    url(r'^paciente/$', paciente, name='pacientes'),
-    url(r'^familia/$', familia, name='familias'),
+    url(r'^paciente/$', login_required(paciente), name='pacientes'),
+    url(r'^familia/$', login_required(familia), name='familias'),
     #views de app docotres
     url(r'^paginadoctor/$', views.paginadoctor, name='doctores'),
     url(r'^itinerario/$', views.paginaitinerario, name='itinerario'),
