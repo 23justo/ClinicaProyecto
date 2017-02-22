@@ -25,22 +25,28 @@
             <th>DPI</th>
             <th>CUI</th>
             <th>Familia</th>
-          </tr>
-          {% for dato in queryset %}
-          <tr>
 
-            {{ dato.nombre }}
-            {{dato.fechaNacimiento}}
-            {{dato.telefono}}
-            {{dato.genero}}
-            {{dato.tipoSangre}}
-            {{dato.dpi}}
-            {{dato.cui}}
-            {{dato.idFamilia}}
 
-          </tr>
+            </tr>
+
+
+
+            {% for dato in queryset %}
+
+            <tr>
+              <th>{{ dato.nombre }}</th>
+              <th>{{dato.fechaNacimiento}}</th>
+              <th>{{dato.telefono}}</th>
+              <th>{{dato.genero}}</th>
+              <th>{{dato.tipoSangre}}</th>
+              <th>{{dato.dpi}}</th>
+              <th>{{dato.cui}}</th>
+              <th>{{dato.idFamilia}}</th>
+            </tr>
             {% endfor %}
-      </table>
+          </table>
+
+
 
 
       <ul class="actions">
