@@ -26,9 +26,9 @@
             <th>CUI</th>
             <th>Familia</th>
           </tr>
-
+          {% for dato in queryset %}
           <tr>
-            {% for dato in queryset %}
+
             {{ dato.nombre }}
             {{dato.fechaNacimiento}}
             {{dato.telefono}}
@@ -37,9 +37,9 @@
             {{dato.dpi}}
             {{dato.cui}}
             {{dato.idFamilia}}
-            {% endfor %}
-          </tr>
 
+          </tr>
+            {% endfor %}
       </table>
 
 
