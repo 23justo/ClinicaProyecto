@@ -1,6 +1,88 @@
 {% extends 'baseTemplate/base.html'%}
 <h1> doctores </h1>
 <form method="post" = action="">{% csrf_token %}
+  {% block navBar %}
+  <li><a href="#intro">Doctores</a></li>
+  <li><a href="#one">Ingreso Doctor</a></li>
+  <li><a href="#two">Editar Doctor</a></li>
+  <li><a href="#three">Incio</a></li>
+  {% endblock %}
 {{ form_doctor.as_p }}
 <input type='submit' value="Registrar">
+{% block apartados %}
+<!-- Intro -->
+  <section id="intro" class="wrapper style1 fullscreen fade-up">
+    <div class="inner">
+      <h1>Doctores</h1>
+
+      <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Especialidad</th>
+
+            </tr>
+
+
+
+            {% for dato in queryset %}
+
+            <tr>
+              <th>{{ dato.nombre }}</th>
+              <th>{{dato.fechaNacimiento}}</th>
+              <th>{{dato.telefono}}</th>
+              <th>{{dato.genero}}</th>
+              <th>{{dato.tipoSangre}}</th>
+              <th>{{dato.dpi}}</th>
+              <th>{{dato.cui}}</th>
+              <th>{{dato.idFamilia}}</th>
+            </tr>
+            {% endfor %}
+          </table>
+
+
+
+
+      <ul class="actions">
+        <li><a href="#one" class="button scrolly">Ingresar Nuevo Doctor</a></li>
+      </ul>
+    </div>
+  </section>
+
+<!-- primer -->
+<section id="one" class="wrapper style2 spotlights">
+  <section>
+
+    <div class="content">
+      <div class="inner">
+        <h2>Ingresa Un Doctor</h2>
+        <form method='POST' action=''>{% csrf_token %}
+          <table>
+            <td>
+              <p><h6>Nombre</h6>{{ form.nombre }}</p>
+              <p><h6>Email</h6>{{form.email}}</p>
+              <p><h6>Telefono</h6>{{form.telefono}}</p>
+              <p><h6>Direccion</h6>{{form.direccion}}</p>
+              <p><h6>Especialidad</h6>{{form.especialidad}}</p>
+            </td>
+
+
+          </table>
+          <input type = "submit" value = "Ingresar" />
+
+        </form>
+
+        <ul class="actions">
+
+        </ul>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+{% endblock %}
 </form>
+<p></p>

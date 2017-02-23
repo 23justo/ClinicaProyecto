@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .forms import FormularioRegistroDoctor, Formulario_para_itinerario
 from .models import RegistroDoctor, Itinerario
 # Create your views here.
+def inicio(request):
+    return render(request,"baseTemplate/inicio.html",{})
+    
 def paginadoctor(request):
     formulario_para_doctor= FormularioRegistroDoctor(request.POST or None)
     if formulario_para_doctor.is_valid():

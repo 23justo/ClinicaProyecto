@@ -1,3 +1,4 @@
+{% extends 'baseTemplate/base.html'%}
 <h1> Itinerario </h1>
 <form method="post" = action="">{% csrf_token %}
 {{ form_itinerario.as_p }}
