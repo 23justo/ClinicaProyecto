@@ -25,10 +25,10 @@
       <form name='form-login'  method="POST">
           {% csrf_token %}
         <span class="fontawesome-user"></span>
-          <input  id="user" placeholder="Username"  class="form-control" type="text" name="username">
+          <input  id="user" required="required" oninvalid="this.setCustomValidity('INGRESA TU NOMBRE DE USUARIO')" placeholder="Username"  class="form-control" type="text" name="username">
 
         <span class="fontawesome-lock"></span>
-          <input type="password" id"pass" placeholder="Password"  class="form-control" type="password" name="password">
+          <input type="password" id="pass" required="required" oninvalid="this.setCustomValidity('INGRESA TU CONTRASEÑA')" placeholder="Password"  class="form-control" type="password" name="password">
 
         <input type="submit" value="Login">
 
