@@ -17,7 +17,7 @@ def paginadoctor(request):
     context = {
         "form_doctor": formulario_para_doctor,
     }
-    return render(request, "doctores.html", context)
+    return render(request, "Doctores/doctores.html", context)
 
 def paginaitinerario(request):
     Form_para_itinerario = Formulario_para_itinerario(request.POST or None)
@@ -35,4 +35,4 @@ def paginaitinerario(request):
     context = {
         "form_itinerario": Formulario_para_itinerario,
     }
-    return render(request, "itinerario.html", context)
+    return render(request, "Doctores/itinerario.html", context)
