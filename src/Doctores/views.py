@@ -1,9 +1,15 @@
 from django.shortcuts import render
 from .forms import FormularioRegistroDoctor, Formulario_para_itinerario
 from .models import RegistroDoctor, Itinerario
+from .models import RegistroDoctor as modeloDoctor
 # Create your views here.
+def inicio(request):
+    return render(request,"baseTemplate/inicio.html",{})
+
 def paginadoctor(request):
     formulario_para_doctor= FormularioRegistroDoctor(request.POST or None)
+    queryset = modeloDoctor.objects.all()
+
     if formulario_para_doctor.is_valid():
         form_data = formulario_para_doctor.cleaned_data
 
@@ -14,8 +20,11 @@ def paginadoctor(request):
         especialidad_limpio = form_data.get("especialidad")
 
         objeto_doctor = RegistroDoctor.objects.create(nombre=nombre_limpio, email=email_limpio, telefono=telefono_limpio, direccion=direccion_limpio, especialidad=especialidad_limpio)
+
+    
     context = {
-        "form_doctor": formulario_para_doctor,
+        "form": formulario_para_doctor,
+        "queryset":queryset
     }
     return render(request, "Doctores/doctores.html", context)
 
