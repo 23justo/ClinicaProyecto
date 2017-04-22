@@ -18,14 +18,14 @@
 
       <table id="paciente">
         <tr>
-            <th>Nombre</th>
-            <th>Fecha de Nacimiento</th>
-            <th>Telefono</th>
-            <th>Genero</th>
-            <th>Tipo De Sangre</th>
-            <th>DPI</th>
-            <th>CUI</th>
-            <th>Familia</th>
+            <th><h5>Nomre</h5></th>
+            <th><h5>Fecha de Nacimiento</h5></th>
+            <th><h5>Telefono</h5></th>
+            <th><h5>Genero</h5></th>
+            <th><h5>Tipo De Sangre</h5></th>
+            <th><h5>DPI</h5></th>
+            <th><h5>CUI</h5></th>
+            <th><h5>Familia</h5></th>
 
 
             </tr>
@@ -35,14 +35,15 @@
             {% for dato in queryset %}
 
             <tr>
-              <th>{{ dato.nombre }}</th>
-              <th>{{dato.fechaNacimiento}}</th>
-              <th>{{dato.telefono}}</th>
-              <th>{{dato.genero}}</th>
-              <th>{{dato.tipoSangre}}</th>
-              <th>{{dato.dpi}}</th>
-              <th>{{dato.cui}}</th>
-              <th>{{dato.idFamilia}}</th>
+              <th><h5>{{ dato.nombre }}</h5></th>
+              <th><h5>{{dato.fechaNacimiento}}</h5></th>
+              <th><h5>{{dato.telefono}}</h5></th>
+              <th><h5>{{dato.genero}}</h5></th>
+              <th><h5>{{dato.tipoSangre}}</h5></th>
+              <th><h5>{{dato.dpi}}</h5></th>
+              <th><h5>{{dato.cui}}</h5></th>
+              <th><h5>{{dato.idFamilia}}</h5></th>
+              <th><input type = "submit" value = "EDITAR" id={{dato.id}} /></th>
             </tr>
             {% endfor %}
           </table>
@@ -66,17 +67,17 @@
         <form method='POST' action=''>{% csrf_token %}
           <table>
             <td>
-              <p><h6>Nombre</h6>{{ form.nombre }}</p>
-              <p><h6>Fecha Nacimiento</h6>{{form.fechaNacimiento}}</p>
-              <p><h6>Telefono</h6>{{form.telefono}}</p>
-              <p><h6>Genero</h6>{{form.genero}}</p>
+              <p><h5>Nombre</h5>{{ form.nombre }}</p>
+              <p><h5>Fecha Nacimiento</h5>{{form.fechaNacimiento}}</p>
+              <p><h5>Telefono</h5>{{form.telefono}}</p>
+              <p><h5>Genero</h5>{{form.genero}}</p>
 
             </td>
             <td>
-              <p><h6>Tipo de Sangre</h6>{{form.tipoSangre}}</p>
-              <p><h6>DPI</h6>{{form.dpi}}</p>
-              <p><h6>CUI</h6>{{form.cui}}</p>
-              <p><h6>Familia</h6>{{form.idFamilia}}</p>
+              <p><h5>Tipo de Sangre</h5>{{form.tipoSangre}}</p>
+              <p><h5>DPI</h5>{{form.dpi}}</p>
+              <p><h5>CUI</h5>{{form.cui}}</p>
+              <p><h5>Familia</h5>{{form.idFamilia}}</p>
 
             </td>
 
@@ -140,3 +141,13 @@
 
 </form>
 <p></p>
+{% block js %}
+
+function()
+{
+
+  
+}
+
+
+{% end block %}
