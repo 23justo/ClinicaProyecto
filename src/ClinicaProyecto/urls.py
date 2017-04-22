@@ -34,7 +34,7 @@ urlpatterns = [
     url(r'^paciente/$', login_required(paciente), name='pacientes'),
     url(r'^familia/$', login_required(familia), name='familias'),
     #views de app docotres
-    url(r'^paginadoctor/$', views.paginadoctor, name='doctores'),
+    url(r'^doctor/$', views.paginadoctor, name='doctores'),
     url(r'^itinerario/$', views.paginaitinerario, name='itinerario'),
 
 ]
