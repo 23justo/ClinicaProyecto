@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import FormularioRegistroDoctor, Formulario_para_itinerario
 from .models import RegistroDoctor, Itinerario
 from .models import RegistroDoctor as modeloDoctor
+from .models import Itinerario as citas
 # Create your views here.
 def inicio(request):
     return render(request,"baseTemplate/inicio.html",{})
@@ -30,6 +31,8 @@ def paginadoctor(request):
 
 def paginaitinerario(request):
     Form_para_itinerario = Formulario_para_itinerario(request.POST or None)
+    queryset = citas.objects.all()
+
     if Form_para_itinerario.is_valid():
         form_data = Form_para_itinerario.cleaned_data
 
@@ -42,6 +45,7 @@ def paginaitinerario(request):
 
         objeto_itinerario = Itinerario.objects.create(citas=citas_limpio,paciente_itinerario=paciente_limpio,doctor=doctor_limpio,medicina=medicina_limpio, cantidad_medicina=cantidad_medicina_limpio,observacion=observacion_limpio)
     context = {
-        "form_itinerario": Formulario_para_itinerario,
+        "form": Form_para_itinerario,
+        "queryset":queryset
     }
     return render(request, "Doctores/itinerario.html", context)
