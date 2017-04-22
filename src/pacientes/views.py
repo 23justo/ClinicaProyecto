@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import pacienteModelsForms,familiaModelsForms
 from .models import paciente as modeloPaciente
+from .models import familia as modeloFamilia
 
 # Create your views here.
 def inicio(request):
@@ -30,11 +31,15 @@ def paciente(request):
 
 def familia(request):
     form = familiaModelsForms(request.POST or None)
+    queryset = modeloFamilia.objects.all()
+
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-        
+        fromm = familiaModelsForms()
+
     context = {
-    "form":form
+    "form":form,
+    "queryset":queryset,
     }
     return render(request,"pacientes/creacionFamilias.html",context)
