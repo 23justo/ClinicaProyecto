@@ -21,7 +21,7 @@ def paginadoctor(request):
 
         objeto_doctor = RegistroDoctor.objects.create(nombre=nombre_limpio, email=email_limpio, telefono=telefono_limpio, direccion=direccion_limpio, especialidad=especialidad_limpio)
 
-    
+
     context = {
         "form": formulario_para_doctor,
         "queryset":queryset

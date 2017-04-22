@@ -35,7 +35,7 @@ urlpatterns = [
     url(r'^familia/$', login_required(familia), name='familias'),
     #views de app docotres
     url(r'^doctor/$', login_required(views.paginadoctor), name='doctores'),
-    url(r'^itinerario/$', views.paginaitinerario, name='itinerario'),
+    url(r'^cita/$', login_required(views.paginaitinerario), name='citas'),
 
 ]
 if settings.DEBUG:
