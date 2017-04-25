@@ -1,0 +1,130 @@
+{% extends  'baseTemplate/base.html'%}
+
+<form method='POST' action=''>{% csrf_token %}
+{% block navBar %}
+<li><a href="#intro">Visitadores</a></li>
+<li><a href="#one">Ingresar Visitador</a></li>
+<li><a href="#two">Editar Visitador</a></li>
+
+{% endblock %}
+
+{% block apartados %}
+
+
+<!-- Intro -->
+  <section id="intro" class="wrapper style1 fullscreen fade-up">
+    <div class="inner">
+      <h1>Medicamentos</h1>
+
+      <table id="paciente">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Telefono</th>
+            <th>Email</th>
+
+
+
+            </tr>
+
+
+
+            {% for dato in queryset %}
+
+            <tr>
+              <th>{{dato.Nombre}}</th>
+              <th>{{dato.Apellido}}</th>
+              <th>{{dato.Telefono}}</th>
+              <th>{{dato.Email}}</th>
+            </tr>
+            {% endfor %}
+          </table>
+
+
+
+
+      <ul class="actions">
+        <li><a href="#one" class="button scrolly">Learn more</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- primer -->
+  <section id="one" class="wrapper style2 spotlights">
+    <section>
+
+      <div class="content">
+        <div class="inner">
+          <h2>Ingresa Un Visitador</h2>
+          <form method='POST' action=''>{% csrf_token %}
+            <table>
+              <td>
+                <p><h6>Nombre</h6>{{ form.Nombre }}</p>
+                <p><h6>Apellido</h6>{{form.Apellido}}</p>
+                <p><h6>Telefono</h6>{{form.Telefono}}</p>
+                <p><h6>Email</h6>{{form.Email}}</p>
+              </td>
+
+
+            </table>
+            <input type = "submit" value = "Ingresar" />
+
+          </form>
+
+          <ul class="actions">
+
+          </ul>
+        </div>
+      </div>
+    </section>
+  </section>
+
+
+
+  <section id="two" class="wrapper style3 fade-up">
+    <div class="inner">
+      <h2>Edicion De Medicamentos</h2>
+      <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+      <div class="features">
+        <section>
+          <span class="icon major fa-code"></span>
+          <h3>Lorem ipsum amet</h3>
+          <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+        </section>
+        <section>
+          <span class="icon major fa-lock"></span>
+          <h3>Aliquam sed nullam</h3>
+          <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+        </section>
+        <section>
+          <span class="icon major fa-cog"></span>
+          <h3>Sed erat ullam corper</h3>
+          <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+        </section>
+        <section>
+          <span class="icon major fa-desktop"></span>
+          <h3>Veroeros quis lorem</h3>
+          <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+        </section>
+        <section>
+          <span class="icon major fa-chain"></span>
+          <h3>Urna quis bibendum</h3>
+          <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+        </section>
+        <section>
+          <span class="icon major fa-diamond"></span>
+          <h3>Aliquam urna dapibus</h3>
+          <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+        </section>
+      </div>
+      <ul class="actions">
+        <li><a href="#" class="button">Learn more</a></li>
+      </ul>
+    </div>
+  </section>
+
+
+
+  {% endblock %}
+
+  </form>

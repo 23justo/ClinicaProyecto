@@ -20,8 +20,11 @@ from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 
 from pacientes.views import inicio,paciente,familia
+from Medicamentos.views import medicamentos
+from Visitadores.views import visitadores
 from Doctores import views
 from django.contrib.auth.views import login,logout_then_login
+
 
 
 urlpatterns = [
@@ -36,7 +39,10 @@ urlpatterns = [
     #views de app docotres
     url(r'^doctor/$', login_required(views.paginadoctor), name='doctores'),
     url(r'^itinerario/$', views.paginaitinerario, name='itinerario'),
-
+    #views de app visitadores
+    url(r'^Visitadores/$', login_required(visitadores), name='visitadores'),
+    #views de app medicamentos
+    url(r'^medicamentos/$', login_required(medicamentos), name='medicamentos'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
