@@ -3,5 +3,5 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
-
-class login(CreateView):
+def inicio(request):
+    return render(request,"baseTemplate/inicio.html",{})
