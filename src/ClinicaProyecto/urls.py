@@ -19,24 +19,14 @@ from django.conf.urls import url,include
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
-
-<<<<<<< HEAD
 from Usuario.views import inicio
-
-#from Doctores import views
-=======
-from pacientes.views import inicio,paciente,familia
-from Medicamentos.views import medicamentos
-from Visitadores.views import visitadores
-from Doctores import views
->>>>>>> bbe2336d82a9d6db48dd0f45b8a96ae1ab2607d6
 from django.contrib.auth.views import login,logout_then_login
 
 
 
 urlpatterns = [
     url(r'^/$', inicio,name='inicio'),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/$', include(admin.site.urls)),
     url(r'^paciente/',include('pacientes.urls') ),
     url(r'^doctor/',include('Doctores.urls') ),
     url(r'^familia/',include('pacientes.urls') ),
@@ -57,7 +47,7 @@ urlpatterns = [
     # #views de app docotres
     # url(r'^doctor/$', login_required(views.paginadoctor), name='doctores'),
     # url(r'^cita/$', login_required(views.paginaitinerario), name='citas'),
-    url(r'^cita/$', login_required(views.paginaitinerario), name='citas'),
+    #url(r'^cita/$', login_required(views.paginaitinerario), name='citas'),
 
 ]
 if settings.DEBUG:
