@@ -18,14 +18,14 @@
 
       <table id="paciente">
         <tr>
-            <th>Nombre</th>
-            <th>Fecha de Nacimiento</th>
-            <th>Telefono</th>
-            <th>Genero</th>
-            <th>Tipo De Sangre</th>
-            <th>DPI</th>
-            <th>CUI</th>
-            <th>Familia</th>
+            <th><h5>Nomre</h5></th>
+            <th><h5>Fecha de Nacimiento</h5></th>
+            <th><h5>Telefono</h5></th>
+            <th><h5>Genero</h5></th>
+            <th><h5>Tipo De Sangre</h5></th>
+            <th><h5>DPI</h5></th>
+            <th><h5>CUI</h5></th>
+            <th><h5>Familia</h5></th>
 
 
             </tr>
@@ -35,14 +35,15 @@
             {% for dato in queryset %}
 
             <tr>
-              <th>{{ dato.nombre }}</th>
-              <th>{{dato.fechaNacimiento}}</th>
-              <th>{{dato.telefono}}</th>
-              <th>{{dato.genero}}</th>
-              <th>{{dato.tipoSangre}}</th>
-              <th>{{dato.dpi}}</th>
-              <th>{{dato.cui}}</th>
-              <th>{{dato.idFamilia}}</th>
+              <th><h5>{{ dato.nombre }}</h5></th>
+              <th><h5>{{dato.fechaNacimiento}}</h5></th>
+              <th><h5>{{dato.telefono}}</h5></th>
+              <th><h5>{{dato.genero}}</h5></th>
+              <th><h5>{{dato.tipoSangre}}</h5></th>
+              <th><h5>{{dato.dpi}}</h5></th>
+              <th><h5>{{dato.cui}}</h5></th>
+              <th><h5>{{dato.idFamilia}}</h5></th>
+              <th><input type = "submit" value = "EDITAR" id={{dato.id}}  onclick= "editar('{{dato.nombre}}','{{dato.fechaNacimiento}}','{{dato.telefono}}','{{dato.tipoSangre}}','{{dato.dpi}}','{{dato.nombre}}','{{dato.cui}}','{{dato.idFamilia}}')" /></th>
             </tr>
             {% endfor %}
           </table>
@@ -66,17 +67,17 @@
         <form method='POST' action=''>{% csrf_token %}
           <table>
             <td>
-              <p><h6>Nombre</h6>{{ form.nombre }}</p>
-              <p><h6>Fecha Nacimiento</h6>{{form.fechaNacimiento}}</p>
-              <p><h6>Telefono</h6>{{form.telefono}}</p>
-              <p><h6>Genero</h6>{{form.genero}}</p>
+              <p><h5>Nombre</h5>{{ form.nombre }}</p>
+              <p><h5>Fecha Nacimiento</h5>{{form.fechaNacimiento}}</p>
+              <p><h5>Telefono</h5>{{form.telefono}}</p>
+              <p><h5>Genero</h5>{{form.genero}}</p>
 
             </td>
             <td>
-              <p><h6>Tipo de Sangre</h6>{{form.tipoSangre}}</p>
-              <p><h6>DPI</h6>{{form.dpi}}</p>
-              <p><h6>CUI</h6>{{form.cui}}</p>
-              <p><h6>Familia</h6>{{form.idFamilia}}</p>
+              <p><h5>Tipo de Sangre</h5>{{form.tipoSangre}}</p>
+              <p><h5>DPI</h5>{{form.dpi}}</p>
+              <p><h5>CUI</h5>{{form.cui}}</p>
+              <p><h5>Familia</h5>{{form.idFamilia}}</p>
 
             </td>
 
@@ -96,47 +97,42 @@
 
 
 <section id="two" class="wrapper style3 fade-up">
-  <div class="inner">
-    <h2>Edicion De Pacientes</h2>
-    <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-    <div class="features">
-      <section>
-        <span class="icon major fa-code"></span>
-        <h3>Lorem ipsum amet</h3>
-        <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-      </section>
-      <section>
-        <span class="icon major fa-lock"></span>
-        <h3>Aliquam sed nullam</h3>
-        <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-      </section>
-      <section>
-        <span class="icon major fa-cog"></span>
-        <h3>Sed erat ullam corper</h3>
-        <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-      </section>
-      <section>
-        <span class="icon major fa-desktop"></span>
-        <h3>Veroeros quis lorem</h3>
-        <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-      </section>
-      <section>
-        <span class="icon major fa-chain"></span>
-        <h3>Urna quis bibendum</h3>
-        <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-      </section>
-      <section>
-        <span class="icon major fa-diamond"></span>
-        <h3>Aliquam urna dapibus</h3>
-        <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-      </section>
-    </div>
-    <ul class="actions">
-      <li><a href="#" class="button">Learn more</a></li>
-    </ul>
-  </div>
+  <form method='POST' action=''>{% csrf_token %}
+    <table id='tablaDos'>
+      <td>
+        <p><h5>Nombre</h5>{{ form.nombre }}</p>
+        <p><h5>Fecha Nacimiento</h5>{{ form.fechaNacimiento }}</p>
+        <p><h5>Telefono</h5>{{form.telefono}}</p>
+        <p><h5>Genero</h5>{{form.genero}}</p>
+
+      </td>
+      <td>
+        <p><h5>Tipo de Sangre</h5>{{form.tipoSangre}}</p>
+        <p><h5>DPI</h5>{{form.dpi}}</p>
+        <p><h5>CUI</h5>{{form.cui}}</p>
+        <p><h5>Familia</h5>{{form.idFamilia}}</p>
+
+      </td>
+
+    </table>
+    <input type = "submit" value = "Ingresar" />
+
+  </form>
 </section>
 {% endblock %}
 
 </form>
 <p></p>
+{% block js %}
+
+<script type="text/javascript">
+
+  function editar(nombre,fechaNacimiento,telefono,genero,tipoSangre,dpi,cui,idFamilia)
+  {
+
+  }
+
+</script>
+
+
+{% endblock %}

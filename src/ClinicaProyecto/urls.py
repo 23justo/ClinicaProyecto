@@ -43,6 +43,7 @@ urlpatterns = [
     url(r'^Visitadores/$', login_required(visitadores), name='visitadores'),
     #views de app medicamentos
     url(r'^medicamentos/$', login_required(medicamentos), name='medicamentos'),
+    url(r'^cita/$', login_required(views.paginaitinerario), name='citas'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

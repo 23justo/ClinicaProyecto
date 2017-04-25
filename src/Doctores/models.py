@@ -16,7 +16,7 @@ class RegistroDoctor(models.Model):
 
 class Itinerario(models.Model):
     citas = models.CharField(max_length = 50, blank = False)
-    paciente_itinerario = models.CharField(max_length = 50, blank = False)
+    paciente_itinerario = models.CharField(max_length = 50, blank = False) #aqui va la hora
     doctor = models.CharField(max_length = 50, blank = False)
     medicina = models.CharField(max_length = 50, blank = False)
     cantidad_medicina = models.CharField(max_length = 50, blank = False)

@@ -18,6 +18,7 @@ def paciente(request):
         instance = form.save(commit=False)
         instance.save()
         form = pacienteModelsForms()
+        
         # print(instance)
         # print(instance.timestamp)
 
