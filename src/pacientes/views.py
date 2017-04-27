@@ -66,3 +66,17 @@ def familia(request):
     "queryset":queryset,
     }
     return render(request,"pacientes/creacionFamilias.html",context)
+
+
+def editarFam(request,id_familia):
+    familia = modeloFamilia.objects.get(id=id_familia)
+
+    if request.method == 'GET':
+
+        form = familiaModelsForms(instance=familia)
+    else:
+        form = familiaModelsForms(request.POST, instance=familia)
+        if form.is_valid():
+            form.save()
+        return redirect('inicio')
+    return render(request,"pacientes/familiaEditar.html",{'form':form})

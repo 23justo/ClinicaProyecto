@@ -29,6 +29,20 @@ def paginadoctor(request):
     }
     return render(request, "Doctores/doctores.html", context)
 
+
+def editar(request,id_doctor):
+    doctor = modeloDoctor.objects.get(id=id_doctor)
+
+    if request.method == 'GET':
+
+        form = FormularioRegistroDoctor(instance=doctor)
+    else:
+        form = FormularioRegistroDoctor(request.POST, instance=doctor)
+        if form.is_valid():
+            form.save()
+        return redirect('inicio')
+    return render(request,"Doctores/doctorEditar.html",{'form':form})
+
 def paginaitinerario(request):
     Form_para_itinerario = Formulario_para_itinerario(request.POST or None)
     queryset = citas.objects.all()

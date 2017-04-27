@@ -25,8 +25,8 @@ from django.contrib.auth.views import login,logout_then_login
 
 
 urlpatterns = [
-    url(r'^/$', inicio,name='inicio'),
-    url(r'^admin/$', include(admin.site.urls)),
+    url(r'^inicio', inicio,name='inicio'),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^paciente/',include('pacientes.urls') ),
     url(r'^doctor/',include('Doctores.urls') ),
     url(r'^familia/',include('pacientes.urls') ),

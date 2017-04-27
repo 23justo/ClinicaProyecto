@@ -18,23 +18,14 @@
 
     <div class="content">
       <div class="inner">
-        <h2>Editar Un Paciente</h2>
+        <h2>Editar Una Familia</h2>
         <form method='POST' action=''>{% csrf_token %}
           <table>
             <td>
-              <p><h5>Nombre</h5>{{ form.nombre }}</p>
-              <p><h5>Fecha Nacimiento</h5>{{form.fechaNacimiento}}</p>
-              <p><h5>Telefono</h5>{{form.telefono}}</p>
-              <p><h5>Genero</h5>{{form.genero}}</p>
-
+              <p><h5>Primer Apellido</h5>{{ form.primerApellido }}</p>
+              <p><h5>Fecha Nacimiento</h5>{{form.segundoApellido}}</p>
             </td>
-            <td>
-              <p><h5>Tipo de Sangre</h5>{{form.tipoSangre}}</p>
-              <p><h5>DPI</h5>{{form.dpi}}</p>
-              <p><h5>CUI</h5>{{form.cui}}</p>
-              <p><h5>Familia</h5>{{form.idFamilia}}</p>
 
-            </td>
 
           </table>
           <input type = "submit" value = "Ingresar" />
