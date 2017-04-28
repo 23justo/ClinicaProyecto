@@ -63,3 +63,17 @@ def paginaitinerario(request):
         "queryset":queryset
     }
     return render(request, "Doctores/itinerario.html", context)
+
+
+def editarCita(request,id_cita):
+    cita = citas.objects.get(id=id_cita)
+
+    if request.method == 'GET':
+
+        form = Formulario_para_itinerario(instance=cita)
+    else:
+        form = Formulario_para_itinerario(request.POST, instance=cita)
+        if form.is_valid():
+            form.save()
+        return redirect('inicio')
+    return render(request,"Doctores/citaEditar.html",{'form':form})

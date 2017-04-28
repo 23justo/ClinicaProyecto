@@ -1,0 +1,66 @@
+{% extends  'baseTemplate/base.html'%}
+
+<h1>Edicion de pacientes</h1>
+
+<form method='POST' action=''>{% csrf_token %}
+{% block navBar %}
+<li><a href="">Editar Paciente</a></li>
+
+{% endblock %}
+
+{% block apartados %}
+<!-- Intro -->
+
+
+<!-- primer -->
+<section id="one" class="wrapper style2 spotlights">
+  <section>
+
+    <div class="content">
+      <div class="inner">
+        <h2>Editar Una Cita</h2>
+        <form method='POST' action=''>{% csrf_token %}
+          <table>
+            <td>
+              <p><h5>Citas</h5>{{ form.citas }}</p>
+              <p><h5>Itinerario</h5>{{form.paciente_itinerario}}</p>
+              <p><h5>Doctor</h5>{{form.doctor}}</p>
+              <p><h5>Medicina</h5>{{form.medicina}}</p>
+              <p><h5>Cantidad Medicina</h5>{{form.cantidad_medicina}}</p>
+              <p><h5>Observacion</h5>{{form.obsevacion}}</p>
+
+            </td>
+
+
+          </table>
+          <input type = "submit" value = "Ingresar" />
+
+        </form>
+
+        <ul class="actions">
+
+        </ul>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+
+
+{% endblock %}
+
+</form>
+<p></p>
+{% block js %}
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

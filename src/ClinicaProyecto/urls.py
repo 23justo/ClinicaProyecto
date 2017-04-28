@@ -20,18 +20,20 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from Usuario.views import inicio
+from Usuario.views import inicioUsuario
 from django.contrib.auth.views import login,logout_then_login
-
+from django.contrib.auth.views import logout
 
 
 urlpatterns = [
-    url(r'^inicio', inicio,name='inicio'),
+    url(r'^$', inicio,name='inicio'),
+    url(r'^inicioUsuario$', login_required(inicioUsuario),name='inicioUsu'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^paciente/',include('pacientes.urls') ),
     url(r'^doctor/',include('Doctores.urls') ),
     url(r'^familia/',include('pacientes.urls') ),
-    url(r'^$',login,{'template_name':'Usuario/login.html'},name='login'),
-
+    url(r'^login$',login,{'template_name':'Usuario/login.html'},name='login'),
+    url(r'^logout/$', logout,{'next_page': 'Usuario/login.html'},name='logout'),
 
     #url(r'^medicamento/',include('Medicamentos.urls') ),
     #url(r'^visitador/',include('Visitadores.urls') ),
@@ -52,5 +54,3 @@ urlpatterns = [
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
-
-LOGIN_URL =  '/'

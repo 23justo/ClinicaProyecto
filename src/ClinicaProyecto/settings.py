@@ -128,5 +128,4 @@ STATICFILES_DIRS = [
     # '/var/www/static/',
 ]
 
-LOGIN_REDIRECT_URL = 'inicio'
-LOGOUT_REDIRECT_URL = 'login'
+LOGIN_REDIRECT_URL = '/inicioUsuario'
