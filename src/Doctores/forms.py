@@ -1,5 +1,5 @@
 from django import forms
-from .models import RegistroDoctor,Itinerario,Historial
+from .models import RegistroDoctor,Itinerario
 
 class FormularioRegistroDoctor(forms.ModelForm):
     class Meta:

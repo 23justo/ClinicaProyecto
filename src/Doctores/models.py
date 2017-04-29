@@ -24,10 +24,3 @@ class Itinerario(models.Model):
 
     def __str__(self):
         return self.observacion
-
-class Historial(models.Model):
-    Historial_medico = models.CharField(max_length = 50, blank = False)
-    citas_futuras = models.CharField(max_length = 50, blank = False)
-
-    def __str__(self):
-        return self.Historial_medico
