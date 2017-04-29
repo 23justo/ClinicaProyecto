@@ -12,15 +12,11 @@ def paginadoctor(request):
     queryset = modeloDoctor.objects.all()
 
     if formulario_para_doctor.is_valid():
-        form_data = formulario_para_doctor.cleaned_data
+        instance = formulario_para_doctor(commit=False)
+        insatnce.save()
+        formulario_para_doctor = formulario_para_doctor()
 
-        nombre_limpio = form_data.get("nombre")
-        email_limpio =form_data.get("email")
-        telefono_limpio = form_data.get("telefono")
-        direccion_limpio = form_data.get("direccion")
-        especialidad_limpio = form_data.get("especialidad")
 
-        objeto_doctor = RegistroDoctor.objects.create(nombre=nombre_limpio, email=email_limpio, telefono=telefono_limpio, direccion=direccion_limpio, especialidad=especialidad_limpio)
 
 
     context = {
@@ -44,22 +40,16 @@ def editar(request,id_doctor):
     return render(request,"Doctores/doctorEditar.html",{'form':form})
 
 def paginaitinerario(request):
-    Form_para_itinerario = Formulario_para_itinerario(request.POST or None)
+    form = Formulario_para_itinerario(request.POST or None)
     queryset = citas.objects.all()
 
-    if Form_para_itinerario.is_valid():
-        form_data = Form_para_itinerario.cleaned_data
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        form = Formulario_para_itinerario()
 
-        citas_limpio = form_data.get("citas")
-        paciente_limpio =form_data.get("paciente_itinerario")
-        doctor_limpio = form_data.get("doctor")
-        medicina_limpio = form_data.get("medicina")
-        cantidad_medicina_limpio = form_data.get("cantidad_medicina")
-        observacion_limpio = form_data.get("observacion")
-
-        objeto_itinerario = Itinerario.objects.create(citas=citas_limpio,paciente_itinerario=paciente_limpio,doctor=doctor_limpio,medicina=medicina_limpio, cantidad_medicina=cantidad_medicina_limpio,observacion=observacion_limpio)
     context = {
-        "form": Form_para_itinerario,
+        "form": form,
         "queryset":queryset
     }
     return render(request, "Doctores/itinerario.html", context)

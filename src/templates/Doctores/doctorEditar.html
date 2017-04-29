@@ -1,10 +1,10 @@
 {% extends  'baseTemplate/base.html'%}
 
-<h1>Edicion de pacientes</h1>
+<h1>Edicion De Doctor</h1>
 
 <form method='POST' action=''>{% csrf_token %}
 {% block navBar %}
-<li><a href="">Editar Paciente</a></li>
+<li><a href="">Editar Doctor</a></li>
 
 {% endblock %}
 
@@ -18,7 +18,7 @@
 
     <div class="content">
       <div class="inner">
-        <h2>Editar Un Paciente</h2>
+        <h2>Editar Un Doctor</h2>
         <form method='POST' action=''>{% csrf_token %}
           <table>
             <td>

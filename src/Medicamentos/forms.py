@@ -6,6 +6,6 @@ class MedicamentosModelsForms(forms.ModelForm):
         model = Registrar
         fields = [
         "Nombre",
-        
-        "CasaMedica"
+        "CasaMedica",
+        'Visitador_id'
         ]

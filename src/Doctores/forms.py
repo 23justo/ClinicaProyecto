@@ -20,4 +20,5 @@ class Formulario_para_itinerario(forms.ModelForm):
         "paciente",
         "idMedicamento",
         "observacion",
+        "fecha",
         ]

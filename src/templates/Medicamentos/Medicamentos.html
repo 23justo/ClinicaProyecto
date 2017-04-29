@@ -20,6 +20,8 @@
         <tr>
             <th>Nombre</th>
             <th>Casa Medica</th>
+            <th>Visitador</th>
+
 
 
 
@@ -33,6 +35,7 @@
             <tr>
               <th>{{dato.Nombre}}</th>
               <th>{{dato.CasaMedica}}</th>
+              <th>{{dato.Visitador_id}}</th>
               <td><a href='editar/{{dato.id}}'><i>Editar</i></a></td>
             </tr>
             {% endfor %}
@@ -59,7 +62,7 @@
               <td>
                 <p><h6>Nombre</h6>{{ form.Nombre }}</p>
                 <p><h6>Casa Medica</h6>{{form.CasaMedica}}</p>
-                <p><h6>Cantidad</h6>{{form.Cantidad}}</p>
+                <p><h6>Visitador</h6>{{form.Visitador_id}}</p>
               </td>
 
 

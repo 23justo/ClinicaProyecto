@@ -6,7 +6,7 @@ from django.db import models
 class Registrar(models.Model):
     Nombre = models.CharField(max_length = 120, blank = True, null = False)
     Apellido = models.CharField(max_length = 120, blank = True, null = False)
-    Telefono = models.IntegerField()
+    Telefono = models.CharField(max_length = 120, blank = True, null = False)
     Email = models.EmailField()
 
     def __str__(self):
