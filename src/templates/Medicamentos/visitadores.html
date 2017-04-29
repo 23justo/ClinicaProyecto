@@ -19,7 +19,9 @@
       <table id="paciente">
         <tr>
             <th>Nombre</th>
-            <th>Casa Medica</th>
+            <th>Apellido</th>
+            <th>Telefono</th>
+            <th>Email</th>
 
 
 
@@ -32,7 +34,9 @@
 
             <tr>
               <th>{{dato.Nombre}}</th>
-              <th>{{dato.CasaMedica}}</th>
+              <th>{{dato.Apellido}}</th>
+              <th>{{dato.Telefono}}</th>
+              <th>{{dato.Email}}</th>
               <td><a href='editar/{{dato.id}}'><i>Editar</i></a></td>
             </tr>
             {% endfor %}
@@ -58,8 +62,9 @@
             <table>
               <td>
                 <p><h6>Nombre</h6>{{ form.Nombre }}</p>
-                <p><h6>Casa Medica</h6>{{form.CasaMedica}}</p>
-                <p><h6>Cantidad</h6>{{form.Cantidad}}</p>
+                <p><h6>Apellido</h6>{{form.Apellido}}</p>
+                <p><h6>Telefono</h6>{{form.Telefono}}</p>
+                <p><h6>Email</h6>{{form.Email}}</p>
               </td>
 
 

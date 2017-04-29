@@ -1,0 +1,61 @@
+{% extends  'baseTemplate/base.html'%}
+
+<h1>Edicion de doctores</h1>
+
+<form method='POST' action=''>{% csrf_token %}
+{% block navBar %}
+<li><a href="">Editar Medicamento</a></li>
+
+{% endblock %}
+
+{% block apartados %}
+<!-- Intro -->
+
+
+<!-- primer -->
+<section id="one" class="wrapper style2 spotlights">
+  <section>
+
+    <div class="content">
+      <div class="inner">
+        <h2>Editar Un Medicamento</h2>
+        <form method='POST' action=''>{% csrf_token %}
+          <table>
+            <td>
+              <p><h5>Nombre</h5>{{ form.Nombre }}</p>
+              <p><h5>CasaMedica</h5>{{form.CasaMedica}}</p>
+            </td>
+
+
+          </table>
+          <input type = "submit" value = "Ingresar" />
+
+        </form>
+
+        <ul class="actions">
+
+        </ul>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+
+
+{% endblock %}
+
+</form>
+<p></p>
+{% block js %}
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

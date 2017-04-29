@@ -22,3 +22,16 @@ def visitadores(request):
     "queryset":queryset,
     }
     return render(request,"Visitadores/visitadores.html",context)
+
+def editar(request,id_visitador):
+    visitador = re.objects.get(id=id_visitador)
+
+    if request.method == 'GET':
+
+        form = VisitadoresModelsForms(instance=visitador)
+    else:
+        form = VisitadoresModelsForms(request.POST, instance=paciente)
+        if form.is_valid():
+            form.save()
+        return redirect('inicio')
+    return render(request,"Visitadores/visitadorEditar.html",{'form':form})

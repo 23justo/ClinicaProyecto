@@ -19,12 +19,12 @@
 
       <table>
         <tr>
-            <th>Citas</th>
-            <th>Paciente</th>
             <th>Doctor</th>
-            <th>medicina</th>
-            <th>Cantidad de medicina</th>
+            <th>Paciente</th>
+            <th>Medicamento</th>
             <th>Observacion</th>
+            <th>fecha</th>
+
 
        </tr>
 
@@ -33,12 +33,11 @@
             {% for dato in queryset %}
 
             <tr>
-              <th>{{dato.citas }}</th>
-              <th>{{dato.paciente_itinerario}}</th>
               <th>{{dato.doctor}}</th>
-              <th>{{dato.medicina}}</th>
-              <th>{{dato.cantidad_medicina}}</th>
+              <th>{{dato.paciente}}</th>
+              <th>{{dato.idMedicamento}}</th>
               <th>{{dato.observacion}}</th>
+              <th>{{dato.fecha}}</th>
               <td><a href='editarCita/{{dato.id}}'><i>Editar</i></a></td>
             </tr>
             {% endfor %}
@@ -63,12 +62,11 @@
         <form method='POST' action=''>{% csrf_token %}
           <table>
             <td>
-              <p><h6>Citas</h6>{{form.citas}}</p>
-              <p><h6>Hora</h6>{{form.paciente_itinerario}}</p>
-              <p><h6>Doctor</h6>{{form.doctor}}</p>
-              <p><h6>Medicina</h6>{{form.medicina}}</p>
-              <p><h6>Cantidad de medicina</h6>{{form.cantidad_medicina}}</p>
+              <p><h6>Doctor<h6>{{form.doctor}}</p>
+              <p><h6>Paciente</h6>{{form.paciente}}</p>
+              <p><h6>Medicamentos</h6>{{form.idMedicamento}}</p>
               <p><h6>Observacion</h6>{{form.observacion}}</p>
+              <p><h6>fecha</h6>{{form.fecha}}</p>
             </td>
 
 

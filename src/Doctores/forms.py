@@ -16,10 +16,8 @@ class Formulario_para_itinerario(forms.ModelForm):
     class Meta:
         model = Itinerario
         fields = [
-        "citas",
-        "paciente_itinerario",
         "doctor",
-        "medicina",
-        "cantidad_medicina",
+        "paciente",
+        "idMedicamento",
         "observacion",
         ]

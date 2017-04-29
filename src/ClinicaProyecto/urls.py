@@ -32,6 +32,8 @@ urlpatterns = [
     url(r'^paciente/',include('pacientes.urls') ),
     url(r'^doctor/',include('Doctores.urls') ),
     url(r'^familia/',include('pacientes.urls') ),
+    url(r'^medicamento/',include('Medicamentos.urls') ),
+    url(r'^visitador/',include('Visitadores.urls') ),
     url(r'^login$',login,{'template_name':'Usuario/login.html'},name='login'),
     url(r'^logout/$', logout,{'next_page': 'Usuario/login.html'},name='logout'),
 

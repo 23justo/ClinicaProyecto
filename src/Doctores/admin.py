@@ -10,11 +10,14 @@ class AdminRegistrado(admin.ModelAdmin):
         model = RegistroDoctor
 
 class ItinerarioAdmin(admin.ModelAdmin):
-    list_display = ['citas',
-    'paciente_itinerario',
+    list_display = [
+
     'doctor',
-    'medicina',
-    'cantidad_medicina']
+    'paciente',
+    'idMedicamento',
+    'observacion',
+    'fecha'
+    ]
     class Meta:
         model = Itinerario
 

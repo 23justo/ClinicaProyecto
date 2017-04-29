@@ -9,5 +9,5 @@ class Registrar(models.Model):
     Telefono = models.IntegerField()
     Email = models.EmailField()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.Nombre

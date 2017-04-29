@@ -15,15 +15,15 @@ class RegistroDoctor(models.Model):
         return self.nombre
 
 class Itinerario(models.Model):
-    citas = models.CharField(max_length = 50, blank = False)
-    paciente_itinerario = models.CharField(max_length = 50, blank = False) #aqui va la hora
-    doctor = models.CharField(max_length = 50, blank = False)
-    medicina = models.CharField(max_length = 50, blank = False)
-    cantidad_medicina = models.CharField(max_length = 50, blank = False)
+
+    doctor = models.ForeignKey('Doctores.RegistroDoctor')
+    paciente = models.ForeignKey('pacientes.paciente')
+    idMedicamento = models.ForeignKey('Medicamentos.Registrar')
     observacion = models.CharField(max_length = 200, blank = True)
+    fecha = models.DateField()
 
     def __str__(self):
-        return self.citas
+        return self.observacion
 
 class Historial(models.Model):
     Historial_medico = models.CharField(max_length = 50, blank = False)

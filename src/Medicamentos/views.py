@@ -22,3 +22,17 @@ def medicamentos(request):
     "queryset":queryset,
     }
     return render(request,"Medicamentos/Medicamentos.html",context)
+
+
+def editar(request,id_medicamento):
+    medicamento = re.objects.get(id=id_medicamento)
+
+    if request.method == 'GET':
+
+        form = MedicamentosModelsForms(instance=medicamento)
+    else:
+        form = pacienteModelsForms(request.POST, instance=medicamento)
+        if form.is_valid():
+            form.save()
+        return redirect('inicio')
+    return render(request,"Medicamentos/medicamentoEditar.html",{'form':form})
