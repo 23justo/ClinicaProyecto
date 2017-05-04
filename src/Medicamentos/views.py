@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from .forms import MedicamentosModelsForms
 from .models import Registrar as re
 
@@ -34,5 +35,5 @@ def editar(request,id_medicamento):
         form = pacienteModelsForms(request.POST, instance=medicamento)
         if form.is_valid():
             form.save()
-        return redirect('inicio')
+        return redirect('inicioUsu')
     return render(request,"Medicamentos/medicamentoEditar.html",{'form':form})

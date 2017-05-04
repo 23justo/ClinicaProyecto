@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from .forms import FormularioRegistroDoctor, Formulario_para_itinerario
 from .models import RegistroDoctor, Itinerario
 from .models import RegistroDoctor as modeloDoctor
@@ -36,7 +37,7 @@ def editar(request,id_doctor):
         form = FormularioRegistroDoctor(request.POST, instance=doctor)
         if form.is_valid():
             form.save()
-        return redirect('inicio')
+        return redirect('inicioUsu')
     return render(request,"Doctores/doctorEditar.html",{'form':form})
 
 def paginaitinerario(request):
@@ -65,5 +66,5 @@ def editarCita(request,id_cita):
         form = Formulario_para_itinerario(request.POST, instance=cita)
         if form.is_valid():
             form.save()
-        return redirect('inicio')
+        return redirect('inicioUsu')
     return render(request,"Doctores/citaEditar.html",{'form':form})

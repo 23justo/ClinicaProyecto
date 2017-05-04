@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import VisitadoresModelsForms
 from .models import Registrar as re
+from django.shortcuts import redirect
 
 def visitadores(request):
     # if request.method == "POST":
@@ -33,5 +34,5 @@ def editar(request,id_visitador):
         form = VisitadoresModelsForms(request.POST, instance=paciente)
         if form.is_valid():
             form.save()
-        return redirect('inicio')
+        return redirect('inicioUsu')
     return render(request,"Visitadores/visitadorEditar.html",{'form':form})

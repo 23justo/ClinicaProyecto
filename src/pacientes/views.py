@@ -47,7 +47,7 @@ def editar(request,id_paciente):
         form = pacienteModelsForms(request.POST, instance=paciente)
         if form.is_valid():
             form.save()
-        return redirect('inicio')
+        return redirect('inicioUsu')
     return render(request,"pacientes/pacienteEditar.html",{'form':form})
 
 
@@ -78,5 +78,5 @@ def editarFam(request,id_familia):
         form = familiaModelsForms(request.POST, instance=familia)
         if form.is_valid():
             form.save()
-        return redirect('inicio')
+        return redirect('inicioUsu')
     return render(request,"pacientes/familiaEditar.html",{'form':form})
