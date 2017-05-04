@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .forms import VisitadoresModelsForms
 from .models import Registrar as re
 from django.shortcuts import redirect
+from django.core.urlresolvers import reverse_lazy
+from django.views import generic
+from django.views.generic import DetailView, ListView
 
 def visitadores(request):
     # if request.method == "POST":
@@ -31,7 +34,7 @@ def editar(request,id_visitador):
 
         form = VisitadoresModelsForms(instance=visitador)
     else:
-        form = VisitadoresModelsForms(request.POST, instance=paciente)
+        form = VisitadoresModelsForms(request.POST, instance=visitador)
         if form.is_valid():
             form.save()
         return redirect('inicioUsu')

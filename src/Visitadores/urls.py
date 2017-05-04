@@ -1,6 +1,6 @@
 from django.conf.urls import url,include
 from . import views
-from pacientes.views import editar
+from Visitadores.views import editar
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
