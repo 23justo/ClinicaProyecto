@@ -5,7 +5,7 @@
   {% block navBar %}
   <li><a href="#intro">Doctores</a></li>
   <li><a href="#one">Ingreso Doctor</a></li>
-  
+
 
   {% endblock %}
 {{ form_doctor.as_p }}
@@ -34,6 +34,7 @@
               <th>{{ dato.nombre }}</th>
               <th>{{dato.email}}</th>
               <th>{{dato.telefono}}</th>
+              <th>{{dato.direccion}}</th>
               <th>{{dato.especialidad}}</th>
               <td><a href='editar/{{dato.id}}'><i>Editar</i></a></td>
             </tr>

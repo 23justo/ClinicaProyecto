@@ -19,6 +19,7 @@
 
       <table>
         <tr>
+
             <th>Doctor</th>
             <th>Paciente</th>
             <th>Medicamento</th>
@@ -26,18 +27,22 @@
             <th>fecha</th>
 
 
-       </tr>
+
 
 
 
             {% for dato in queryset %}
 
             <tr>
+
               <th>{{dato.doctor}}</th>
               <th>{{dato.paciente}}</th>
               <th>{{dato.idMedicamento}}</th>
               <th>{{dato.observacion}}</th>
               <th>{{dato.fecha}}</th>
+
+
+
               <td><a href='editarCita/{{dato.id}}'><i>Editar</i></a></td>
             </tr>
             {% endfor %}
@@ -62,11 +67,13 @@
         <form method='POST' action=''>{% csrf_token %}
           <table>
             <td>
+
               <p><h6>Doctor<h6>{{form.doctor}}</p>
               <p><h6>Paciente</h6>{{form.paciente}}</p>
               <p><h6>Medicamentos</h6>{{form.idMedicamento}}</p>
               <p><h6>Observacion</h6>{{form.observacion}}</p>
               <p><h6>fecha</h6>{{form.fecha}}</p>
+
             </td>
 
 

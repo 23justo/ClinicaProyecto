@@ -13,9 +13,9 @@ def paginadoctor(request):
     queryset = modeloDoctor.objects.all()
 
     if formulario_para_doctor.is_valid():
-        instance = formulario_para_doctor(commit=False)
-        insatnce.save()
-        formulario_para_doctor = formulario_para_doctor()
+        instance = formulario_para_doctor.save(commit=False)
+        instance.save()
+        formulario_para_doctor = FormularioRegistroDoctor()
 
 
 

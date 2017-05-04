@@ -16,6 +16,7 @@ class RegistroDoctor(models.Model):
 
 class Itinerario(models.Model):
 
+
     doctor = models.ForeignKey('Doctores.RegistroDoctor')
     paciente = models.ForeignKey('pacientes.paciente')
     idMedicamento = models.ForeignKey('Medicamentos.Registrar')
