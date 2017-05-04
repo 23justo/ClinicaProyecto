@@ -19,13 +19,12 @@
 
       <table>
         <tr>
-            <th>Citas</th>
+            <th>Hora</th><!-- hora -->
+            <th>fecha</th>
             <th>Paciente</th>
             <th>Doctor</th>
-            <th>medicina</th>
-            <th>Cantidad de medicina</th>
-            <th>Observacion</th>
-
+            <th>Motivos</th>
+            <th>Sintomas</th>
        </tr>
 
 
@@ -34,11 +33,12 @@
 
             <tr>
               <th>{{dato.citas }}</th>
+              <th>{{dato.medicina}}</th>
               <th>{{dato.paciente_itinerario}}</th>
               <th>{{dato.doctor}}</th>
-              <th>{{dato.medicina}}</th>
-              <th>{{dato.cantidad_medicina}}</th>
               <th>{{dato.observacion}}</th>
+              <th>{{dato.cantidad_medicina}}</th>
+
               <td><a href='editarCita/{{dato.id}}'><i>Editar</i></a></td>
             </tr>
             {% endfor %}
@@ -63,12 +63,13 @@
         <form method='POST' action=''>{% csrf_token %}
           <table>
             <td>
-              <p><h6>Citas</h6>{{form.citas}}</p>
-              <p><h6>Hora</h6>{{form.paciente_itinerario}}</p>
+              <p><h6>Hora</h6>{{form.citas}}</p>
+              <p><h6>Fecha</h6>{{form.medicina}}</p>
+              <p><h6>Paciente</h6>{{form.paciente_itinerario}}</p>
               <p><h6>Doctor</h6>{{form.doctor}}</p>
-              <p><h6>Medicina</h6>{{form.medicina}}</p>
-              <p><h6>Cantidad de medicina</h6>{{form.cantidad_medicina}}</p>
-              <p><h6>Observacion</h6>{{form.observacion}}</p>
+              <p><h6>Motivos</h6>{{form.observacion}}</p>
+              <p><h6>Sintomas</h6>{{form.cantidad_medicina}}</p>
+
             </td>
 
 

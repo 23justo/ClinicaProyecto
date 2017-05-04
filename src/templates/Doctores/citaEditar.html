@@ -1,10 +1,10 @@
 {% extends  'baseTemplate/base.html'%}
 
-<h1>Edicion de pacientes</h1>
+<h1>Edicion de Citas</h1>
 
 <form method='POST' action=''>{% csrf_token %}
 {% block navBar %}
-<li><a href="">Editar Paciente</a></li>
+<li><a href="">Editar Cita</a></li>
 
 {% endblock %}
 
@@ -22,12 +22,12 @@
         <form method='POST' action=''>{% csrf_token %}
           <table>
             <td>
-              <p><h5>Citas</h5>{{ form.citas }}</p>
-              <p><h5>Itinerario</h5>{{form.paciente_itinerario}}</p>
-              <p><h5>Doctor</h5>{{form.doctor}}</p>
-              <p><h5>Medicina</h5>{{form.medicina}}</p>
-              <p><h5>Cantidad Medicina</h5>{{form.cantidad_medicina}}</p>
-              <p><h5>Observacion</h5>{{form.obsevacion}}</p>
+              <p><h6>Hora</h6>{{form.citas}}</p>
+              <p><h6>Fecha</h6>{{form.medicina}}</p>
+              <p><h6>Paciente</h6>{{form.paciente_itinerario}}</p>
+              <p><h6>Doctor</h6>{{form.doctor}}</p>
+              <p><h6>Motivos</h6>{{form.observacion}}</p>
+              <p><h6>Sintomas</h6>{{form.cantidad_medicina}}</p>
 
             </td>
 

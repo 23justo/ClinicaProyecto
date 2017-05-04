@@ -15,12 +15,12 @@ class RegistroDoctor(models.Model):
         return self.nombre
 
 class Itinerario(models.Model):
-    citas = models.CharField(max_length = 50, blank = False)
-    paciente_itinerario = models.CharField(max_length = 50, blank = False) #aqui va la hora
-    doctor = models.CharField(max_length = 50, blank = False)
-    medicina = models.CharField(max_length = 50, blank = False)
-    cantidad_medicina = models.CharField(max_length = 50, blank = False)
-    observacion = models.CharField(max_length = 200, blank = True)
+    citas = models.CharField(max_length = 50, blank = False) # renombrar a hora
+    paciente_itinerario = models.CharField(max_length = 50, blank = False) # renombrar a paciente
+    doctor = models.CharField(max_length = 50, blank = False) #
+    medicina = models.CharField(max_length = 50, blank = True)# renombre a fecha de cita
+    cantidad_medicina = models.CharField(max_length = 200, blank = True) #renombre a Sintomas
+    observacion = models.CharField(max_length = 200, blank = True) # renombrar a motivos
 
     def __str__(self):
         return self.citas
