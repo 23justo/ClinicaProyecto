@@ -32,7 +32,7 @@ def editar(request,id_medicamento):
 
         form = MedicamentosModelsForms(instance=medicamento)
     else:
-        form = pacienteModelsForms(request.POST, instance=medicamento)
+        form = MedicamentosModelsForms(request.POST, instance=medicamento)
         if form.is_valid():
             form.save()
         return redirect('inicioUsu')
