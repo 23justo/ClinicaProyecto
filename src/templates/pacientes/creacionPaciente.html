@@ -67,11 +67,11 @@
     <div class="content">
       <div class="inner">
         <h2>Ingresa Un Paciente</h2>
-        <form method='POST' action=''>{% csrf_token %}
+        <form method='POST' class="form-control">{% csrf_token %}
           <table>
             <td>
               <p><h5>Nombre</h5>{{ form.nombre }}</p>
-              <p><h5>Fecha Nacimiento</h5>{{form.fechaNacimiento}}</p>
+              <p><h5>Fecha Nacimiento (Formato: 2016-02-20).</h5>{{form.fechaNacimiento}}</p>
               <p><h5>Telefono</h5>{{form.telefono}}</p>
               <p><h5>Genero</h5>{{form.genero}}</p>
 

@@ -35,7 +35,8 @@ urlpatterns = [
     url(r'^medicamento/',include('Medicamentos.urls') ),
     url(r'^visitador/',include('Visitadores.urls') ),
     url(r'^login$',login,{'template_name':'Usuario/login.html'},name='login'),
-    url(r'^logout/$', logout,{'next_page': 'Usuario/login.html'},name='logout'),
+    url(r'^usuario/logout',logout,{'next_page':'inicio'},name='logout'),
+    
 
     #url(r'^medicamento/',include('Medicamentos.urls') ),
     #url(r'^visitador/',include('Visitadores.urls') ),
